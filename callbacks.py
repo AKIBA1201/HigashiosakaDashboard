@@ -52,8 +52,8 @@ def register_callbacks(app):
                 # 年齢区分の列名とラベル
                 age_groups = ['age_under_10', 'age_10_19', 'age_20_29', 'age_30_39', 'age_40_49',
                             'age_50_59', 'age_60_69', 'age_70_79', 'age_80_89', 'age_over_90']
-                age_labels = ['10歳未満', '10-19歳', '20-29歳', '30-39歳', '40-49歳',
-                            '50-59歳', '60-69歳', '70-79歳', '80-89歳', '90歳以上']
+                age_labels = ['10歳未満', '10代', '20代', '30代', '40代',
+                            '50代', '60代', '70代', '80代', '90歳以上']
                 
                 # データ取得と欠損値補完
                 try:
@@ -67,5 +67,3 @@ def register_callbacks(app):
                 fig = px.bar(df, x='AgeGroup', y='Population', title=f'{town_name}の年齢層分布')
                 fig.update_layout(xaxis_title='', yaxis_title='', xaxis_tickangle=45)
                 return fig
-
-
